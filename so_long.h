@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:32:35 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/05 01:05:45 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/05 01:54:35 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include "./MLX/mlx.h"
 # include "ft_printf/ft_printf.h"
 # include "libft/libft.h"
+# include "GNL/get_next_line.h"
 
 typedef struct s_game
 {
@@ -58,4 +59,5 @@ typedef struct s_actual_map
 
 void	ft_check_ac_equal_2(char *av, t_game *game);
 void	free_game(t_game *game);
+void	ft_get_line(t_game *game, int fd, char *file_name);
 #endif
