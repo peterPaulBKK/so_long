@@ -6,13 +6,21 @@
 #    By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 21:38:14 by bsirikam          #+#    #+#              #
-#    Updated: 2023/02/04 17:16:30 by pniyom           ###   ########.fr        #
+#    Updated: 2023/02/05 01:43:41 by pniyom           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = main.c 
+SRC = 	main.c\
+		ft_check_ac_equal_2.c\
+		free_game.c\
+		ft_printf/ft_printf_utils.c ft_printf/ft_printf_utils2.c ft_printf/ft_printf_utils3.c ft_printf/ft_printf.c ft_printf/puthex.c ft_printf/put_pointer.c\
+		libft/ft_atoi.c libft/ft_striteri.c libft/ft_bzero.c libft/ft_lstnew.c libft/ft_strjoin.c libft/ft_calloc.c libft/ft_lstsize.c libft/ft_strlcat.c libft/ft_isalnum.c\
+		libft/ft_memchr.c libft/ft_strlcpy.c libft/ft_isalpha.c libft/ft_memcmp.c libft/ft_isascii.c libft/ft_memcpy.c libft/ft_strmapi.c libft/ft_isdigit.c libft/ft_memmove.c\
+		libft/ft_strncmp.c libft/ft_isprint.c libft/ft_memset.c libft/ft_strnstr.c libft/ft_putchar_fd.c libft/ft_strrchr.c  libft/ft_putendl_fd.c\
+		libft/ft_strtrim.c libft/ft_putnbr_fd.c libft/ft_substr.c libft/ft_lstclear.c libft/ft_putstr_fd.c libft/ft_tolower.c libft/ft_lstdelone.c\
+		libft/ft_split.c libft/ft_toupper.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_strdup.c\
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
@@ -41,8 +49,10 @@ endif
 all: MLX_LIB $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME) $(MLX_INC)
+	$(CC) $(OBJ) -o $(NAME) $(MLX_INC) 
 
+$(LIBFT):
+		make  -C ./libft
 leak:
 	@leaks -atExit -- ./so_long map.ber
 
