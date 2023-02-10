@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:32:35 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/05 01:54:35 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/10 23:44:32 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_game
 	int		p_pos_r;
 	int		p_pos_c;
 	int		num_c;
-	int		num_c_can_read;
+	int		readable_c;
 	int		num_e;
 }			t_game;
 
@@ -60,4 +60,8 @@ typedef struct s_actual_map
 void	ft_check_ac_equal_2(char *av, t_game *game);
 void	free_game(t_game *game);
 void	ft_get_line(t_game *game, int fd, char *file_name);
+int		ft_s_len_with_nl(char *str);
+void	ft_check_line(char *line, t_game *game);
+void	ft_create_map(t_game *game, char *file_name);
+
 #endif
