@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:17:48 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/05 01:08:41 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/11 00:04:31 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int ac, char **av)
 {
 	t_game			*game;
-	t_actual_map	actual_map;
+	t_map			actual_map;
 
 	game = (t_game *)malloc(sizeof(t_game));
 	game->height = 1;

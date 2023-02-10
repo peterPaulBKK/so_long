@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 01:52:43 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/10 23:42:37 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/11 00:15:46 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	ft_get_line(t_game *game, int fd, char *file_name)
 		game->height++;
 	}
 	close(fd);
-	ft_create_map(game, file_name);
+	ft_malloc_game_2d_string(game, file_name);
 }
