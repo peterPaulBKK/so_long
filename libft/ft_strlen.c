@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_game.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 01:10:58 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/11 16:03:01 by pniyom           ###   ########.fr       */
+/*   Created: 2023/02/11 16:33:55 by pniyom            #+#    #+#             */
+/*   Updated: 2023/02/11 16:36:25 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-void	free_game(t_game *game)
+int	ft_strlen(const char *s)
 {
-	free(game);
-	exit(EXIT_SUCCESS);
-}
-
-void	free_map(t_game *game)
-{
-	int i;
+	int	i;
 
 	i = 0;
-	while(i < game->height)
-	{
-		free(game->map[i]);
+	while (s[i] != '\0')
 		i++;
-	}
-	free(game->map);
-	free_game(game);
+	return (i);
 }

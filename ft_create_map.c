@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 23:42:53 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/11 00:29:58 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/11 15:54:03 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 void	ft_create_map(t_game *game, char *file_name, int fd)
 {
 	int		height;
-	// t_map	final_map;
-	
+		
 	height = 0;
 	while(height < game->height)
 	{
@@ -25,12 +24,7 @@ void	ft_create_map(t_game *game, char *file_name, int fd)
 	}
 	game->map[height] = NULL;
 	close(fd);
-	int i = 0;
-	while(i < game->height)
-	{
-		ft_printf("%s", game->map[i]);
-		i++;
-	}
+	ft_check_border(game);
 	ft_printf("fd = %d file = %s game- height = %d\n", fd, file_name, game->height);
 }
 
