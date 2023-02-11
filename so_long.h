@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:32:35 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/11 15:47:55 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/11 20:14:24 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ void	ft_malloc_game_2d_string(t_game *game, char *file_name);
 void	ft_create_map(t_game *game, char *file_name, int fd);
 void	ft_check_border(t_game *game);
 void	free_map(t_game *game);
+void	ft_locate_p(t_game *game);
+void	ft_locate_e(t_game *game, t_map *map);
 
 #endif
