@@ -1,47 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_game.c                                        :+:      :+:    :+:   */
+/*   ft_check_error_e_c.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 01:10:58 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/12 02:14:51 by pniyom           ###   ########.fr       */
+/*   Created: 2023/02/12 00:45:28 by pniyom            #+#    #+#             */
+/*   Updated: 2023/02/12 02:13:56 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	free_game(t_game *game)
+void	ft_check_error_e_c(t_game *game)
 {
-	free(game);
-	exit(EXIT_SUCCESS);
-}
-
-void	free_map(t_game *game)
-{
-	int	i;
-
-	i = 0;
-	while (i < game->height)
+	if (game->num_c != game->readable_c || game->num_e != 1)
 	{
-		free(game->map[i]);
-		i++;
+		ft_printf("path error!!\n");
+		free_map(game);
 	}
-	free(game->map);
-	free(game->map);
-	free_game(game);
-}
-
-void	free_map_only(t_game *game)
-{
-	int	i;
-
-	i = 0;
-	while (i < game->height)
-	{
-		free(game->map[i]);
-		i++;
-	}
-	free(game->map);
 }

@@ -1,47 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_game.c                                        :+:      :+:    :+:   */
+/*   ft_render.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 01:10:58 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/12 02:14:51 by pniyom           ###   ########.fr       */
+/*   Created: 2023/02/12 02:26:22 by pniyom            #+#    #+#             */
+/*   Updated: 2023/02/12 02:42:06 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	free_game(t_game *game)
+void	ft_render(t_game *game, t_map *definitive_map)
 {
-	free(game);
-	exit(EXIT_SUCCESS);
-}
-
-void	free_map(t_game *game)
-{
-	int	i;
-
-	i = 0;
-	while (i < game->height)
-	{
-		free(game->map[i]);
-		i++;
-	}
-	free(game->map);
-	free(game->map);
-	free_game(game);
-}
-
-void	free_map_only(t_game *game)
-{
-	int	i;
-
-	i = 0;
-	while (i < game->height)
-	{
-		free(game->map[i]);
-		i++;
-	}
-	free(game->map);
+	definitive_map->mlx = mlx_init();
+	definitive_map->win = mlx_new_window(definitive_map->mlx, (game->len - 1) * 64, \
+	(game->height - 1) * 64, "Game");
 }

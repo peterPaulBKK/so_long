@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 19:33:25 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/11 15:56:59 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/12 00:35:35 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,24 @@ void	ft_check_line(char *line, t_game *game)
 	int			i;
 
 	i = -1;
-	if ((line == NULL && c < 1) || p > 1 || e > 1)
-		line_error(line, game);
 	while (line && line[++i])
 	{
+		if (ft_strchr("01PCE\n", line[i]) == NULL)
+			alien_character(line, game, line[i]);
 		if (line[i] == 'C')
 			c++;
 		if (line[i] == 'E')
 			e++;
 		if (line[i] == 'P')
 			p++;
-		if (ft_strchr("01PCE\n", line[i]) == NULL)
-			alien_character(line, game, line[i]);
 	}
+	if ((line == NULL && c < 1) || p > 1 || e > 1)
+		line_error(line, game);
 	game->readable_c = c;
 }
 /* as the line start sending 
 from the second line onward
 if p or c is in the first line
 it will not be counted by 
-ft_check_line*/
+ft_check_line
+*/

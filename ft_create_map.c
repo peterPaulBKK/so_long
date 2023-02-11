@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 23:42:53 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/11 20:16:22 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/12 01:11:13 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_create_map(t_game *game, char *file_name, int fd)
 {
 	int		height;
 	t_map	*definitive_map;
-		
+
 	height = 0;
-	while(height < game->height)
+	while (height < game->height)
 	{
 		game->map[height] = get_next_line(fd);
 		height++;
@@ -29,16 +29,22 @@ void	ft_create_map(t_game *game, char *file_name, int fd)
 	ft_locate_p(game);
 	definitive_map = (t_map *)malloc(sizeof(t_map));
 	ft_locate_e(game, definitive_map);
-	ft_printf("location of P x = %d y = %d\n", game->p_pos_r, game->p_pos_c);
-	ft_printf("location of exit in definitive map row = %d col = %d\n", definitive_map->r_e, definitive_map->c_e);
-	ft_printf("fd = %d file = %s game- height = %d\n", fd, file_name, game->height);
+	game->num_c = 0;
+	game->num_e = 0;
+	ft_flood_fill(game->map, game, game->p_pos_r, game->p_pos_r);
+	ft_check_error_e_c(game);
+	free_map_only(game);
+	ft_create_definitive_map(game, definitive_map, file_name);
 }
+/* flood_fill fills
+all the charater in game->map with 1
+*/
 
 void	ft_malloc_game_2d_string(t_game *game, char *file_name)
 {
 	int		fd;
 
-	fd = open(file_name,O_RDONLY);
+	fd = open(file_name, O_RDONLY);
 	game->map = (char **)malloc(sizeof(char *) * (game->height + 1));
 	if (game->map == NULL)
 	{
