@@ -6,7 +6,7 @@
 #    By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 21:38:14 by bsirikam          #+#    #+#              #
-#    Updated: 2023/02/12 02:28:25 by pniyom           ###   ########.fr        #
+#    Updated: 2023/02/14 17:56:25 by pniyom           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,11 @@ SRC = 	main.c\
 		ft_create_definitive_map.c\
 		ft_check_error_e_c.c\
 		ft_render.c\
+		ft_floor.c\
+		ft_wall.c\
+		ft_put_img.c\
+		ft_cpy_to_definitive.c\
+		ft_hook.c\
 		ft_printf/ft_printf_utils.c ft_printf/ft_printf_utils2.c ft_printf/ft_printf_utils3.c ft_printf/ft_printf.c ft_printf/puthex.c ft_printf/put_pointer.c\
 		libft/ft_atoi.c libft/ft_striteri.c libft/ft_bzero.c libft/ft_lstnew.c libft/ft_strjoin.c libft/ft_calloc.c libft/ft_lstsize.c libft/ft_strlcat.c libft/ft_isalnum.c\
 		libft/ft_memchr.c libft/ft_strlcpy.c libft/ft_isalpha.c libft/ft_memcmp.c libft/ft_isascii.c libft/ft_memcpy.c libft/ft_strmapi.c libft/ft_isdigit.c libft/ft_memmove.c\

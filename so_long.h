@@ -6,7 +6,7 @@
 /*   By: pniyom <pniyom@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:32:35 by pniyom            #+#    #+#             */
-/*   Updated: 2023/02/12 02:28:38 by pniyom           ###   ########.fr       */
+/*   Updated: 2023/02/14 17:56:51 by pniyom           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,11 @@ void	ft_check_error_e_c(t_game *game);
 void	ft_create_definitive_map(t_game *game,
 			t_map *definitive_map, char *file_name);
 void	ft_render(t_game *game, t_map *definitive_map);
+void	ft_floor(t_map *definitive_map);
+void	ft_wall(t_map *definitive_map);
+void	ft_put_img(char c, t_map *definitive_map, int h, int l);
+void	ft_cpy_to_definitive(t_map *definitive_map, t_game *game);
+void	ft_hook(t_map *definitive_map);
 
 # ifndef KEY_H
 #  define KEY_H
